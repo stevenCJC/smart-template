@@ -118,7 +118,7 @@ function template(text,moduleName,settings) {
 	// If a variable is not specified, place data values in local scope.
 	if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
 
-	source = "var __t,__p='',__j=Array.prototype.join," + "print=function(){__p+=__j.call(arguments,'');};\n" + source + "return __p;\n function _escape(string) {if (string == null) return ''; return ('' + string).replace(new RegExp('[' + _.keys(entityMap.escape).join('') + ']', 'g'), function(match) {return {'&': '&amp;','<': '&lt;', '>': '&gt;', '\"': '&quot;', '\'': '&#x27;','/': '&#x2F;'}[match]; });};";
+	source = "var __t,__p='',__j=Array.prototype.join," + "print=function(){__p+=__j.call(arguments,'');};\n" + source + "return __p;\n function _escape(string) {if (string == null) return ''; return ('' + string).replace(new RegExp('[' + _.keys(entityMap.escape).join('') + ']', 'g'), function(match) {return {'&': '&amp;','<': '&lt;', '>': '&gt;', '\"': '&quot;', '\\'': '&#x27;','/': '&#x2F;'}[match]; });};";
 
 	return 'define("'+moduleName+'",[],function(' + (settings.variable || 'obj') + '){\n' + source + '})';
 
