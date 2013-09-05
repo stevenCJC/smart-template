@@ -64,10 +64,18 @@ grunt.initConfig({
     options: {
       prefix: 'TPL_',
     },
-    files: {
+    doIt_: {
       'dest/tpl.js': [''src/tpl_1.html', 'src/tpl_2.html'],
     },
+	doIt:{
+		expand: true,
+		cwd: 'src_dev/js/t/',
+		src: ['*.html'],
+		dest: 'src/js/t/',
+		ext: '.js',
+	}
   },
+  
 })
 ```
 
