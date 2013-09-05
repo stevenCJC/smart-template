@@ -9,21 +9,18 @@
 'use strict';
 
 module.exports = function(grunt) {
-
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
-
+	
   grunt.registerMultiTask('smart_template', 'if your project contains underscore and requirejs,and you also use the template function provided by underscore,you will need it.', function() {
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       prefix: ''
     });
-
+	grunt.log.writeln('begin '+Object.keys(this.files).length);
     // Iterate over all specified file groups.
     this.files.forEach(function(f) {
+		grunt.log.writeln('begin '+f.dest);
       // Concat specified files.
       var src = f.src.filter(function(filepath) {
-        // Warn on and remove invalid source files (if nonull was set).
         if (!grunt.file.exists(filepath)) {
           grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
@@ -33,7 +30,8 @@ module.exports = function(grunt) {
       }).map(function(filepath) {
 		  var f=filepath.split(/\/|\\/g);
 		  f=f[f.length-1].split(/[^a-z0-9_]/ig);
-		  f=f.splice(f.length-1,1).join("_");
+		  f.splice(f.length-1,1);
+		  f=f.join("_");
           return template(grunt.file.read(filepath),options.prefix+f);
       });
 	  if (src.length === 0) {
@@ -51,7 +49,7 @@ module.exports = function(grunt) {
   });
 	
 };
-function template(text,moduleName) {
+function template(text,moduleName,settings) {
 	var ArrayProto = Array.prototype,
 	ObjProto = Object.prototype,
 	FuncProto = Function.prototype;
@@ -90,8 +88,7 @@ function template(text,moduleName) {
 		'\u2029': 'u2029'
 	};
 	var render;
-	settings = defaults({},
-	settings, templateSettings_);
+	settings = defaults({}, settings, templateSettings_);
 
 	var matcher = new RegExp([(settings.escape || noMatch).source, (settings.interpolate || noMatch).source, (settings.evaluate || noMatch).source].join('|') + '|$', 'g');
 
@@ -123,7 +120,7 @@ function template(text,moduleName) {
 
 	source = "var __t,__p='',__j=Array.prototype.join," + "print=function(){__p+=__j.call(arguments,'');};\n" + source + "return __p;\n function _escape(string) {if (string == null) return ''; return ('' + string).replace(new RegExp('[' + _.keys(entityMap.escape).join('') + ']', 'g'), function(match) {return {'&': '&amp;','<': '&lt;', '>': '&gt;', '\"': '&quot;', '\'': '&#x27;','/': '&#x2F;'}[match]; });};";
 
-	return 'define("'+moduleName+'",function(' + (settings.variable || 'obj') + '){\n' + source + '})';
+	return 'define("'+moduleName+'",[],function(' + (settings.variable || 'obj') + '){\n' + source + '})';
 
 	function defaults(obj) {
 		each(slice.call(arguments, 1),
