@@ -46,8 +46,10 @@ grunt.initConfig({
   },
 })
 ```
-content of compiled files just like a requirejs module
-the name of module is from the filename without ext of the html file 
+The content of compiled files just like a requirejs module . 
+
+The name of module is from the filename without ext of the html file . 
+
 ```js
 define( moduleName, [], function(data){ 
 	... 
