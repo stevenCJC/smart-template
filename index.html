@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Smart-template : if your project contains underscore and requirejs,and you also use the template function provided by underscore,you will need it.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-    <title>Smart-template</title>
+    <title>Smart-template by stevenCJC</title>
   </head>
 
   <body>
+    <header>
+      <div class="inner">
+        <h1>Smart-template</h1>
+        <h2>if your project contains underscore and requirejs,and you also use the template function provided by underscore,you will need it.</h2>
+        <a href="https://github.com/stevenCJC/smart-template" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/stevenCJC/smart-template">View on GitHub</a>
-
-          <h1 id="project_title">Smart-template</h1>
-          <h2 id="project_tagline">if your project contains underscore and requirejs,and you also use the template function provided by underscore,you will need it.</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/stevenCJC/smart-template/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/stevenCJC/smart-template/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a name="smart-templateiframe-srchttpwwwbaiducomiframe" class="anchor" href="#smart-templateiframe-srchttpwwwbaiducomiframe"><span class="octicon octicon-link"></span></a>smart-template<code>&lt;iframe src="http://www.baidu.com/"&gt;&lt;/iframe&gt;</code>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="smart-templateiframe-srchttpwwwbaiducomiframe" class="anchor" href="#smart-templateiframe-srchttpwwwbaiducomiframe" aria-hidden="true"><span class="octicon octicon-link"></span></a>smart-template<code>&lt;iframe src="http://www.baidu.com/"&gt;&lt;/iframe&gt;</code>
 </h1>
 
 <blockquote>
@@ -40,28 +37,26 @@
 </blockquote>
 
 <h2>
-<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
 
 <p>This plugin requires Grunt <code>~0.4.1</code></p>
 
 <p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile">Gruntfile</a> as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:</p>
 
-<pre lang="shell"><code>npm install smart-template --save-dev
-</code></pre>
+<div class="highlight highlight-shell"><pre>npm install smart-template --save-dev</pre></div>
 
 <p>Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:</p>
 
-<div class="highlight highlight-js"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">loadNpmTasks</span><span class="p">(</span><span class="s1">'smart-template'</span><span class="p">);</span>
-</pre></div>
+<div class="highlight highlight-js"><pre>grunt.loadNpmTasks(<span class="pl-s1"><span class="pl-pds">'</span>smart-template<span class="pl-pds">'</span></span>);</pre></div>
 
 <h2>
-<a name="the-smart_template-task" class="anchor" href="#the-smart_template-task"><span class="octicon octicon-link"></span></a>The "smart_template" task</h2>
+<a id="the-smart_template-task" class="anchor" href="#the-smart_template-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>The "smart_template" task</h2>
 
 <h3>
-<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Options</h3>
 
 <h4>
-<a name="optionsprefix" class="anchor" href="#optionsprefix"><span class="octicon octicon-link"></span></a>options.prefix</h4>
+<a id="optionsprefix" class="anchor" href="#optionsprefix" aria-hidden="true"><span class="octicon octicon-link"></span></a>options.prefix</h4>
 
 <p>Type: <code>String</code>
 Default value: <code>''</code></p>
@@ -69,80 +64,84 @@ Default value: <code>''</code></p>
 <p>A string value that is used as the prefix a module name.</p>
 
 <h3>
-<a name="usage-examples" class="anchor" href="#usage-examples"><span class="octicon octicon-link"></span></a>Usage Examples</h3>
+<a id="usage-examples" class="anchor" href="#usage-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage Examples</h3>
 
 <h4>
-<a name="default-options" class="anchor" href="#default-options"><span class="octicon octicon-link"></span></a>Default Options</h4>
+<a id="default-options" class="anchor" href="#default-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Default Options</h4>
 
 <p>In this example, the default options are used to do something with whatever. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result would be <code>Testing, 1 2 3.</code></p>
 
-<div class="highlight highlight-js"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
-  <span class="nx">smart_template</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">prefix</span><span class="o">:</span><span class="s1">''</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s1">'dest/tpl.js'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/tpl.html'</span><span class="p">],</span>
-    <span class="p">},</span>
-  <span class="p">},</span>
-<span class="p">})</span>
-</pre></div>
+<div class="highlight highlight-js"><pre>grunt.initConfig({
+  smart_template<span class="pl-k">:</span> {
+    options<span class="pl-k">:</span> {
+        prefix<span class="pl-k">:</span><span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>,
+    },
+    files<span class="pl-k">:</span> {
+      <span class="pl-s1"><span class="pl-pds">'</span>dest/tpl.js<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s1"><span class="pl-pds">'</span>src/tpl.html<span class="pl-pds">'</span></span>],
+    },
+  },
+})</pre></div>
 
 <p>The content of compiled files just like a requirejs module . </p>
 
 <p>The name of module is from the filename without ext of the html file . </p>
 
-<div class="highlight highlight-js"><pre><span class="nx">define</span><span class="p">(</span> <span class="nx">moduleName</span><span class="p">,</span> <span class="p">[],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span> 
-    <span class="p">...</span> 
-<span class="p">});</span>
-</pre></div>
+<div class="highlight highlight-js"><pre>define( moduleName, [], <span class="pl-st">function</span>(<span class="pl-vpf">data</span>){ 
+    ... 
+});</pre></div>
 
 <h4>
-<a name="custom-options" class="anchor" href="#custom-options"><span class="octicon octicon-link"></span></a>Custom Options</h4>
+<a id="custom-options" class="anchor" href="#custom-options" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Options</h4>
 
 <p>In this example, custom options are used to do something else with whatever else. So if the <code>testing</code> file has the content <code>Testing</code> and the <code>123</code> file had the content <code>1 2 3</code>, the generated result in this case would be <code>Testing: 1 2 3 !!!</code></p>
 
-<div class="highlight highlight-js"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
-  <span class="nx">smart_template</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">prefix</span><span class="o">:</span> <span class="s1">'TPL_'</span><span class="p">,</span>
-    <span class="p">},</span>
-    <span class="nx">doIt_</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s1">'dest/tpl.js'</span><span class="o">:</span> <span class="p">[</span><span class="s1">''</span><span class="nx">src</span><span class="o">/</span><span class="nx">tpl_1</span><span class="p">.</span><span class="nx">html</span><span class="s1">', '</span><span class="nx">src</span><span class="o">/</span><span class="nx">tpl_2</span><span class="p">.</span><span class="nx">html</span><span class="s1">'],</span>
-<span class="s1">    },</span>
-<span class="s1">    doIt:{</span>
-<span class="s1">        expand: true,</span>
-<span class="s1">        cwd: '</span><span class="nx">src_dev</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">t</span><span class="o">/</span><span class="s1">',</span>
-<span class="s1">        src: ['</span><span class="o">*</span><span class="p">.</span><span class="nx">html</span><span class="s1">'],</span>
-<span class="s1">        dest: '</span><span class="nx">src</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">t</span><span class="o">/</span><span class="s1">',</span>
-<span class="s1">        ext: '</span><span class="p">.</span><span class="nx">js</span><span class="err">'</span><span class="p">,</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-
-<span class="p">})</span>
-</pre></div>
+<div class="highlight highlight-js"><pre>grunt.initConfig({
+  smart_template<span class="pl-k">:</span> {
+    options<span class="pl-k">:</span> {
+      prefix<span class="pl-k">:</span> <span class="pl-s1"><span class="pl-pds">'</span>TPL_<span class="pl-pds">'</span></span>,
+    },
+    doIt_<span class="pl-k">:</span> {
+      <span class="pl-s1"><span class="pl-pds">'</span>dest/tpl.js<span class="pl-pds">'</span></span><span class="pl-k">:</span> [<span class="pl-s1"><span class="pl-pds">'</span><span class="pl-pds">'</span></span>src/tpl_1.html<span class="pl-s1"><span class="pl-pds">'</span>, <span class="pl-pds">'</span></span>src/tpl_2.html<span class="pl-s1"><span class="pl-pds">'</span>],</span>
+<span class="pl-s1">    },</span>
+<span class="pl-s1">    doIt:{</span>
+<span class="pl-s1">        expand: true,</span>
+<span class="pl-s1">        cwd: <span class="pl-pds">'</span></span>src_dev/js/t/<span class="pl-s1"><span class="pl-pds">'</span>,</span>
+<span class="pl-s1">        src: [<span class="pl-pds">'</span></span><span class="pl-k">*</span>.html<span class="pl-s1"><span class="pl-pds">'</span>],</span>
+<span class="pl-s1">        dest: <span class="pl-pds">'</span></span>src/js/t/<span class="pl-s1"><span class="pl-pds">'</span>,</span>
+<span class="pl-s1">        ext: <span class="pl-pds">'</span></span>.js<span class="pl-s1"><span class="pl-pds">'</span>,</span>
+<span class="pl-s1">    }</span>
+<span class="pl-s1">  },</span>
+<span class="pl-s1"></span>
+<span class="pl-s1">})</span></pre></div>
 
 <h2>
-<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+<a id="contributing" class="anchor" href="#contributing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributing</h2>
 
 <p>In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using <a href="http://gruntjs.com/">Grunt</a>.</p>
 
 <h2>
-<a name="release-history" class="anchor" href="#release-history"><span class="octicon octicon-link"></span></a>Release History</h2>
+<a id="release-history" class="anchor" href="#release-history" aria-hidden="true"><span class="octicon octicon-link"></span></a>Release History</h2>
 
 <p><em>(Nothing yet)</em></p>
-      </section>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/stevenCJC/smart-template/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/stevenCJC/smart-template/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/stevenCJC/smart-template"></a> is maintained by <a href="https://github.com/stevenCJC">stevenCJC</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
     </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Smart-template maintained by <a href="https://github.com/stevenCJC">stevenCJC</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
+  
   </body>
 </html>
