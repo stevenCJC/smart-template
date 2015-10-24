@@ -1,73 +1,59 @@
-/*
- * smart-template
- * https://github.com/stevenCJC/smart-template
- *
- * Copyright (c) 2013 steven_chen
- * Licensed under the MIT license.
- */
-
-'use strict';
 
 module.exports = function(grunt) {
- 
-  // Project configuration.
-  grunt.initConfig({
-    jshint: {
-      all: [
-        'Gruntfile.js',
-        'tasks/*.js',
-        '<%= nodeunit.tests %>',
-      ],
-      options: {
-        jshintrc: '.jshintrc',
-      },
-    },
+    grunt.initConfig({
+        pkg : grunt.file.readJSON('package.json'),
+        
+		
+		smart_template:{
+			options:{
+				baseUrl:"<%=pkg.basePath%>",
+			},
+			doit:{
+				expand: true,
+				cwd: '<%=pkg.basePath%>/',
+				src: ['**/tpl/*.html'],
+				dest: '<%=pkg.basePath%>/',
+				ext: '.js',
+			},
+		},
+		
+		
+		watch:{
 
-    // Before generating any new files, remove any previously-created files.
-    clean: {
-      tests: ['tmp'],
-    },
+			tpl:{
+				files: '<%=pkg.basePath%>/**/tpl/*.html',
+				tasks: ['smart_template']
+			},
+			
+		},
+		
+		
+		
+		
+		
+    });
+	
+	grunt.loadNpmTasks('grunt-contrib-watch');
+	
+	grunt.loadTasks( "built" );
+	
+	grunt.registerTask('default', ['smart_template','watch']);
+	
+}; 
 
-    // Configuration to be run (and then tested).
-    smart_template: {
-      default_options: {
-        options: {
-        },
-        files: {
-          'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
-      custom_options: {
-        options: {
-          separator: ': ',
-          punctuation: ' !!!',
-        },
-        files: {
-          'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123'],
-        },
-      },
-    },
 
-    // Unit tests.
-    nodeunit: {
-      tests: ['test/*_test.js'],
-    },
 
-  });
 
-  // Actually load this plugin's task(s).
-  grunt.loadTasks('tasks');
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
-  // Whenever the "test" task is run, first clean the "tmp" dir, then run this
-  // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'smart_template', 'nodeunit']);
 
-  // By default, lint and run all tests.
-  grunt.registerTask('default', ['jshint', 'test']);
 
-};
+
+
+
+
+
+
+
+
+
